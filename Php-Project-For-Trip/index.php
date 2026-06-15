@@ -1,7 +1,4 @@
 
- This code is not running here because it required XAMPP and need to make database name trip and table named trip then need to add attributes in table those are required then only the code will run.
-
-
 <?php
 $insert = false;
 if(isset($_POST['name'])){
@@ -55,7 +52,7 @@ if(isset($_POST['name'])){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img class="bg" src="bg.jpg" alt="IIT Kharagpur">
+    <img class="bg" src="bg.jpg" alt="img">
     <div class="container">
         <h1>Welcome to US Trip form</h3>
         <p>Enter your details and submit this form to confirm your participation in the trip </p>
@@ -67,7 +64,15 @@ if(isset($_POST['name'])){
         <form action="index.php" method="post">
             <input type="text" name="name" id="name" placeholder="Enter your name">
             <input type="text" name="age" id="age" placeholder="Enter your Age">
-            <input type="text" name="gender" id="gender" placeholder="Enter your gender">
+
+            <select name="gender" id="gender">
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            
             <input type="email" name="email" id="email" placeholder="Enter your email">
             <input type="phone" name="phone" id="phone" placeholder="Enter your phone">
             <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Enter any other information here"></textarea>

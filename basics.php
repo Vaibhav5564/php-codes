@@ -1,8 +1,6 @@
 
 <?PHP
 
-// echo "<h1> Hello </h1>"; It give large heading but not working in online compiler
-
 echo "Hello, This is My First php Web";
 echo "\n";
 // Variables in php
@@ -159,7 +157,6 @@ echo count($languages), "\n"; //It Gives Total no. of elements in array
   }
   printNumber(45);
  */ 
- //Above Functions are correct but not working in online compiler
  
  $str1 = "This is a String";
  $l = strlen($str1); //Count the total no. of characters in string
