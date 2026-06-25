@@ -16,10 +16,37 @@ if(isset($_GET['username']) && !empty($_GET['username']))
 
     $context = stream_context_create($options);
 
-    $response = file_get_contents($url, false, $context);
+    $response = @file_get_contents($url, false, $context);
 
-    if($response)
-    {
+    if ($response === false) {
+        echo '
+<div style="
+    max-width:500px;
+    margin:30px auto;
+    padding:20px;
+    background:#ffe6e6;
+    border-left:6px solid #ff4d4d;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+">
+
+    <h2 style="color:#d63031;">❌ GitHub API Request Failed</h2>
+
+    <p style="color:#555;">
+        Unable to fetch GitHub profile.<br>
+        Please try again later.
+    </p>
+
+</div>
+
+<script>
+setTimeout(function(){
+    window.location.href = window.location.pathname;
+}, 2000);
+</script>
+';
+    } else {
         $userData = json_decode($response, true);
     }
 }
